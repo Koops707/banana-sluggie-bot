@@ -20,9 +20,10 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    print(message.author.name)
+    if message.author.name == 'killerkrok':
+        await message.channel.send("https://tenor.com/view/horny-jail-bonk-dog-hit-head-stop-being-horny-gif-17298755")
 
-    if message.content.startswith('&hello'):
+    elif message.content.startswith('&hello'):
         string_to_send = "Hello " + message.author.mention + " !"
         await message.channel.send(string_to_send)
 
