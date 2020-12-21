@@ -20,6 +20,8 @@ async def on_message(message):
     if message.author == client.user:
         return
 
+    print(message.author.name)
+
     if message.content.startswith('&hello'):
         string_to_send = "Hello " + message.author.mention + " !"
         await message.channel.send(string_to_send)
