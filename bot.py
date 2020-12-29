@@ -9,6 +9,8 @@ def code_formating_string(in_string):
 
 client = discord.Client()
 
+bruh_counter = 0
+
 
 @client.event
 async def on_ready():
@@ -55,5 +57,21 @@ async def on_message(message):
             discord_tag = message.author.name
             await message.channel.send(f"{discord_tag}\'s roll: {dice_roll}")
 
+    else:
+        message_split_text = message.content.split(" ")
+        for word in message_split_text:
+            if word.lower() == "bruh":
+                bruh_counter += 1
+        await message.channel.send(f"Bruh Counter: {bruh_counter}")
+
+
+# implement seperate functions later
+"""
+def dice_roll_message(dice_roll):
+    if dice_roll < 1 or dice_roll > 1000:
+        return code_formating_string("Error: Must be in range 2 - 1000")
+    else:
+
+"""
 
 client.run(os.environ['AUTH_TOKEN'])
