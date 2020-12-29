@@ -45,12 +45,15 @@ async def on_message(message):
     elif message.content.startswith("&roll"):
         dice_text = message.content.split()
         dice_limit = int(dice_text[1])
+        print(dice_text)
+        print(dice_limit)
         if dice_limit < 1 or dice_limit > 200:
             await message.channel.send(code_formating_string("Error: Must be in range 2 - 200"))
         else:
             dice_roll = random.randint(1, dice_limit)
+            print(dice_roll)
             discord_tag = message.author.name
-            await message.channel.send(f"{discord_tag}\'s roll: {dice_roll}")
+            await message.channel.send(f"{discord_tag} s roll: {dice_roll}")
 
 
 client.run(os.environ['AUTH_TOKEN'])
