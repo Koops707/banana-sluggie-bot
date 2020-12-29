@@ -3,13 +3,23 @@ import random
 import os
 
 
+class Bruh_Counter:
+    def __init__(self):
+        self.counter = 0
+
+    def increment(self):
+        self.counter += 1
+
+    def get_counter(self):
+        return self.counter
+
+
 def code_formating_string(in_string):
     return "```" + in_string + "```"
 
 
+bruh = Bruh_Counter()
 client = discord.Client()
-
-bruh_counter = 0
 
 
 @client.event
@@ -61,8 +71,8 @@ async def on_message(message):
         message_split_text = message.content.split(" ")
         for word in message_split_text:
             if word.lower() == "bruh":
-                bruh_counter += 1
-        await message.channel.send(f"Bruh Counter: {bruh_counter}")
+                bruh.increment()
+        await message.channel.send(f"Bruh Counter: {bruh.get_counter}")
 
 
 # implement seperate functions later
