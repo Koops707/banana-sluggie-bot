@@ -33,9 +33,6 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    # if message.author.name == 'killerkrok':
-    #    await message.channel.send("https://tenor.com/view/horny-jail-bonk-dog-hit-head-stop-being-horny-gif-17298755")
-
     elif message.content.startswith('&hello'):
         string_to_send = "Hello " + message.author.mention + " !"
         await message.channel.send(string_to_send)
@@ -68,12 +65,17 @@ async def on_message(message):
             await message.channel.send(f"{discord_tag}\'s roll: {dice_roll}")
 
     else:
+
+        if message.author.name == 'killerkrok':
+            await message.channel.send("https://tenor.com/view/horny-jail-bonk-dog-hit-head-stop-being-horny-gif-17298755")
+
+        """
         message_split_text = message.content.split(" ")
         for word in message_split_text:
             if word.lower() == "bruh":
                 bruh.increment()
         await message.channel.send(f"Bruh Counter: {bruh.get_counter}")
-
+        """
 
 # implement seperate functions later
 """
