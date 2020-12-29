@@ -42,7 +42,6 @@ async def on_message(message):
             else:
                 await message.channel.send(code_formating_string("Functionality not implemented yet"))
 
-    """
     elif message.content.startswith("&roll"):
         dice_text = message.content.split()
         dice_limit = int(dice_text[1])
@@ -55,7 +54,6 @@ async def on_message(message):
             print(dice_roll)
             discord_tag = message.author.name
             await message.channel.send(f"{discord_tag} s roll: {dice_roll}")
-    """
 
 
 client.run(os.environ['AUTH_TOKEN'])
