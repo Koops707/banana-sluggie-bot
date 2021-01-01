@@ -57,7 +57,7 @@ async def on_message(message):
             discord_tag = message.author.name
             await message.channel.send(f"{discord_tag}\'s roll: {dice_roll}")
         """
-        await dice_roll_message(dice_limit, message.author.name)
+        await message.channel.send(dice_roll_message(dice_limit, message.author.name))
 
     else:
 
