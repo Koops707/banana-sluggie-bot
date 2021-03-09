@@ -76,6 +76,7 @@ async def on_message(message):
         #    await message.channel.send("https://tenor.com/view/cringy-cringe-cringe-alert-gif-17398154")
 
         # implement seperate functions later
+        pass
 
 
 client.run(os.environ['AUTH_TOKEN'])
