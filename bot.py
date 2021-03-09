@@ -8,6 +8,14 @@ def code_formating_string(in_string):
     return "```" + in_string + "```"
 
 
+def dice_roll_message(dice_roll, message_author):
+    if dice_roll < 1 or dice_roll > 1000:
+        return code_formating_string("Error: Must be in range 2 - 1000")
+    else:
+        dice_result = random.randint(1, dice_roll)
+        return code_formating_string(message_author + "\'s roll: " + str(dice_result))
+
+
 client = discord.Client()
 
 
@@ -68,14 +76,6 @@ async def on_message(message):
         #    await message.channel.send("https://tenor.com/view/cringy-cringe-cringe-alert-gif-17398154")
 
         # implement seperate functions later
-
-
-def dice_roll_message(dice_roll, message_author):
-    if dice_roll < 1 or dice_roll > 1000:
-        return code_formating_string("Error: Must be in range 2 - 1000")
-    else:
-        dice_result = random.randint(1, dice_roll)
-        return code_formating_string(message_author + "\'s roll: " + str(dice_result))
 
 
 client.run(os.environ['AUTH_TOKEN'])
