@@ -32,6 +32,7 @@ async def on_message(message):
     elif message.content.startswith("&connect4"):
         await message.channel.send(code_formating_string("Connect 4 in progress - Stay Tuned!"))
 
+    """
     elif message.content.startswith("&opgg"):
         summoner_name = message.content.split()
         if len(summoner_name) != 2:
@@ -42,6 +43,7 @@ async def on_message(message):
                 await message.channel.send(code_formating_string("Doo Doo Player"))
             else:
                 await message.channel.send(code_formating_string("Functionality not implemented yet"))
+    """
 
     elif message.content.startswith("&roll"):
         dice_text = message.content.split()
@@ -61,8 +63,11 @@ async def on_message(message):
 
     else:
 
-        if message.author.name == 'killerkrok':
-            await message.channel.send("https://tenor.com/view/horny-jail-bonk-dog-hit-head-stop-being-horny-gif-17298755")
+        # if message.author.name == 'killerkrok':
+        #    await message.channel.send("https://tenor.com/view/horny-jail-bonk-dog-hit-head-stop-being-horny-gif-17298755")
+
+        if message.author.name == "BrokeVegas":
+            await message.channel.send("https://tenor.com/view/cringy-cringe-cringe-alert-gif-17398154")
 
 
 # implement seperate functions later
